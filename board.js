@@ -246,114 +246,17 @@ function drawScene() {
 
     // mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
 
-    mat4.ortho(-10 * gl.viewportWidth / gl.viewportHeight, 10 * gl.viewportWidth / gl.viewportHeight, -10, 10, 0.1, 100.0, pMatrix);
+    mat4.ortho(-15 * gl.viewportWidth / gl.viewportHeight, 15 * gl.viewportWidth / gl.viewportHeight, -15, 15, 0.1, 100.0, pMatrix);
     mat4.identity(mvMatrix);
     mat4.lookAt([8, 8, 8], [0, 0, 0], [0, 1, 0], mvMatrix);
 
-    // mat4.scale(mvMatrix, [0.2, 0.2, 0.2]);
-
-
-
-    // mvPushMatrix();
-
-    // mat4.translate(mvMatrix, [2, 0, 2]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
-    // setMatrixUniforms();
-    // gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-
-    // mvPopMatrix();
-
-
-    // mvPushMatrix();
-
-    // mat4.translate(mvMatrix, [4, 0, 0]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
-    // setMatrixUniforms();
-    // gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-
-    // mvPopMatrix();
-
-
-    // mvPushMatrix();
-
-    // mat4.translate(mvMatrix, [0, 2, 2]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
-    // setMatrixUniforms();
-    // gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-
-    // mvPopMatrix();
-
-
-    // mvPushMatrix();
-
-    // mat4.translate(mvMatrix, [0, 0, 4]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
-    // setMatrixUniforms();
-    // gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-
-    // mvPopMatrix();
-
-
-    // mvPushMatrix();
-
-    // mat4.translate(mvMatrix, [2, 2, 0]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
-    // setMatrixUniforms();
-    // gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-
-    // mvPopMatrix();
-
-
-    // mvPushMatrix();
-
-    // mat4.translate(mvMatrix, [0, 4, 0]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
-    // gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-    // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
-    // setMatrixUniforms();
-    // gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-
-    // mvPopMatrix();
-
-
-
-
-
-    for (var x = 0; x < 5; x += 2) {
-        for (var y = 0; y < 5; y += 2) {
-            for (var z = 0; z < 5; z += 2) {
-                if (x + Math.abs(y) + z === 4) {
+    for (var CubeX = 0; CubeX < 13; CubeX += 2) {
+        for (var CubeY = 0; CubeY < 13; CubeY += 2) {
+            for (var CubeZ = 0; CubeZ < 13; CubeZ += 2) {
+                if (CubeX + Math.abs(CubeY) + CubeZ === 12) {
                     mvPushMatrix();
 
-                    mat4.translate(mvMatrix, [x, y, z]);
+                    mat4.translate(mvMatrix, [CubeX, CubeY, CubeZ]);
 
                     gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
                     gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
@@ -369,10 +272,10 @@ function drawScene() {
         }
     };
 
+
     mvPushMatrix();
 
-    mat4.translate(mvMatrix, [0, 6, 0]);
-
+    mat4.translate(mvMatrix, [0, 14, 0]);
     mat4.translate(mvMatrix, [0.0, 0.0, z]);
     mat4.translate(mvMatrix, [0.0, y, 0.0]);
     mat4.translate(mvMatrix, [x, 0.0, 0.0]);
@@ -389,6 +292,9 @@ function drawScene() {
     gl.drawArrays(gl.TRIANGLES, 0, pyramidVertexPositionBuffer.numItems);
 
     mvPopMatrix();
+
+
+    
 }
 
 

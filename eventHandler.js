@@ -17,7 +17,7 @@ $(document).keydown(function(e) {
     keysdown[e.keyCode] = true;
 
     // Do our thing
-    if (x >= 0 && z >= 0 && y >= -4) {
+    if (x >= 0 && z >= 0 && y >= -12) {
         switch (e.keyCode) {
             case 37: // Left cursor key, step left-top
 
@@ -29,7 +29,7 @@ $(document).keydown(function(e) {
 
             case 39: // Right cursor key, step right-bottom
 
-                if (y - 2 >= -4) {
+                if (y - 2 >= -12) {
                     x += 2;
                     y -= 2;
                 }
@@ -45,7 +45,7 @@ $(document).keydown(function(e) {
 
             case 40: // Down cursor key, step left-bottom
 
-                if (y - 2 >= -4) {
+                if (y - 2 >= -12) {
                     y -= 2;
                     z += 2;
                 }
@@ -54,22 +54,22 @@ $(document).keydown(function(e) {
     }
 
     
-    colors = [
-        [1.0, 0.0, 0.0, 1.0], // Front face
-        [1.0, 1.0, 0.0, 1.0], // Back face
-        [1.0, 1.0, 1.0, 1.0], // Top face
-        [1.0, 0.5, 0.5, 1.0], // Bottom face
-        [0.0, 0.0, 1.0, 1.0], // Right face
-        [1.0, 0.0, 1.0, 1.0] // Left face
-    ];
-    var unpackedColors = [];
-    for (var i in colors) {
-        var color = colors[i];
-        for (var j = 0; j < 4; j++) {
-            unpackedColors = unpackedColors.concat(color);
-        }
-    }
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(unpackedColors), gl.STATIC_DRAW);
+    // colors = [
+    //     [1.0, 0.0, 0.0, 1.0], // Front face
+    //     [1.0, 1.0, 0.0, 1.0], // Back face
+    //     [1.0, 1.0, 1.0, 1.0], // Top face
+    //     [1.0, 0.5, 0.5, 1.0], // Bottom face
+    //     [0.0, 0.0, 1.0, 1.0], // Right face
+    //     [1.0, 0.0, 1.0, 1.0] // Left face
+    // ];
+    // var unpackedColors = [];
+    // for (var i in colors) {
+    //     var color = colors[i];
+    //     for (var j = 0; j < 4; j++) {
+    //         unpackedColors = unpackedColors.concat(color);
+    //     }
+    // }
+    // gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(unpackedColors), gl.STATIC_DRAW);
     
 
 
